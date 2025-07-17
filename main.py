@@ -3,9 +3,11 @@ import pandas as pd
 import joblib
 import time
 import base64
+import pickle
 
 
-model = joblib.load('final_delivery_model.joblib')
+with open("best_model.pkl","rb") as file:
+    model=pickle.load(file)
 
 st.set_page_config(
     page_title="E-commerce Order Tracker",
